@@ -1,0 +1,36 @@
+dataSet=[[1,2],[3,4],[5,6]]
+v=[]
+w=[]
+x=0
+y=0
+
+alteration=0
+totalXVariance=0
+totalYVariance=0
+
+for a in dataSet:
+  alteration += 1
+  w.append(a[0])
+  v.append(a[1])
+  x += a[0]
+  y += a[1]
+
+xmean = x/alteration
+ymean = y/alteration
+
+print("X Mean => ", xmean)
+print("Y Mean => ", ymean)
+print()
+for z in w:
+  print("X Variance => " ,(z-xmean)**2)
+  totalXVariance += (z-xmean)**2
+
+print()
+
+for e in v:
+  print("Y Variance => " ,(e-ymean)**2)
+  totalYVariance += (e-ymean)**2
+
+print()
+print("Total X Variance => ", totalXVariance)
+print("Total Y Variance => ", totalYVariance)
