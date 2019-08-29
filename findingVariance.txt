@@ -1,4 +1,4 @@
-dataSet=[[1,2],[3,4],[5,6]]
+dataSet=[[1,1],[2,3],[4,3],[3,2],[5,5]]
 v=[]
 w=[]
 x=0
@@ -34,3 +34,33 @@ for e in v:
 print()
 print("Total X Variance => ", totalXVariance)
 print("Total Y Variance => ", totalYVariance)
+
+print()
+
+def covariance(x, x_mean, y, y_mean):
+    b11=0.0
+    for i in range(len(v)):
+      b11 += (v[i]-xmean)*(w[i]-ymean)/len(v)
+    return b11
+
+print("Co-Variance => ",covariance(v,xmean,w,ymean))
+
+def b1():
+  return covariance(v,xmean,w,ymean)/totalXVariance
+
+print("B1 => ",b1())
+
+def b0():
+  return ymean - (b1() * xmean)
+
+print("B0 => ",b0())
+
+def y():
+  y1=0.0
+  for i in range(len(v)):
+    y1 += b0() + b1() * v[i]
+
+  return y1
+
+print("Y => ",y())
+print("Root Mean Square Y => ",y()**.5)
