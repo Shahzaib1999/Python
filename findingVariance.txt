@@ -64,3 +64,21 @@ def y():
 
 print("Y => ",y())
 print("Root Mean Square Y => ",y()**.5)
+print()
+
+data=[[6,1],[5,4]]
+
+def euclideanDistance():
+  for i in range(len(data)):
+    # print(data[i][0])
+    if i < len(data)-1:
+      print(" => ",(((data[i+1][0]-data[i][0])**2)+((data[i+1][1]-data[i][1])**2))**.5)
+    
+euclideanDistance()
+
+def manthattanDistance():
+  for i in range(len(data)):
+    if i < len(data)-1:
+      print(" => ",abs((data[i+1][0]-data[i][0]))+abs((data[i+1][1]-data[i][1])))
+
+manthattanDistance()
