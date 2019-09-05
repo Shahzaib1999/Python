@@ -1,0 +1,38 @@
+import pandas as pd
+
+imp = pd.read_csv('dataSet.csv')
+
+data=[]
+# print(imp['price'])
+abc=[]
+for x in range(len(imp['price'])):
+  abc.append(imp['price'][x])
+  abc.append(imp['size'][x])
+  # print(imp['price'][x],imp['size'][x])
+  # print(abc)
+  data.append(abc)
+  abc=[]
+
+
+data1=[[4,3],[2,3]]
+myInput = [2000,5]
+print(data)
+aaa = []
+def euclideanDistance():
+  for i in range(len(data)):
+    if i < len(data):
+      a = (((data[i][0]-myInput[0])**2)+((data[i][1]-myInput[1])**2))**.5
+      aaa.append(i)
+      print("Euclidean => ",a)
+
+euclideanDistance()
+# aaa.sort()
+print(aaa)
+
+print()
+def manthattanDistance():
+  for i in range(len(data)):
+    if i < len(data):
+      print("Manthattan => ",abs((data[i][0]-myInput[0]))+abs((data[i][1]-myInput[1])))
+
+# manthattanDistance()
